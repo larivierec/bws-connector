@@ -1,0 +1,18 @@
+services:
+  bws-connector:
+    build: .
+    image: bws-connector:alpine
+    environment:
+      - WARDEN_ACCESS_TOKEN=${WARDEN_ACCESS_TOKEN}
+      - WARDEN_ORGANIZATION_ID=${WARDEN_ORGANIZATION_ID}
+    command:
+      [
+        "--base-url",
+        "https://bw.garb.dev/rest/api/1",
+        "--insecure",
+        "render",
+        "example/template.yaml",
+      ]
+    volumes:
+      - .:/work:ro
+    working_dir: /work

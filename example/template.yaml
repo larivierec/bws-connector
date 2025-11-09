@@ -1,0 +1,10 @@
+s3:
+  access_key: bws://minio_tf_volsync/access_key
+  secret_key: bws://minio_tf_volsync/secret_key
+cluster:
+  kubeconfig: bws://KUBECONFIG
+database:
+  postgres:
+    harbor:
+      user: bws://harbor/pg_user
+      password: bws://harbor/pg_pass
